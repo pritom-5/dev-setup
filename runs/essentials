@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+sudo apt install -y alacritty git qbittorrent vlc copyq dropbox htop ripgrep
