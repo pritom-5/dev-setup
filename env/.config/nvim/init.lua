@@ -563,6 +563,14 @@ require('lazy').setup({
 
 },
 
+{
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+    -- use opts = {} for passing setup options
+    -- this is equivalent to setup({}) function
+},
+
 })
 
 -- disable netrw at the very start of your init.lua
