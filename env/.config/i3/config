@@ -50,7 +50,7 @@ bindsym XF86MonBrightnessDown exec light -dec 20 # decrease screen brightness
 # Night light
 
 # use redshift -O 4500 to fix night light
-exec --no-startup-id redshift -O 4000K
+exec --no-startup-id redshift -O 3500k
 
 # Remove border on top
 for_window [class="^.*"] border pixel 2
