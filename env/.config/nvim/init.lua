@@ -2,9 +2,12 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 local map = vim.api.nvim_set_keymap
 
--- basic custom keybindings
+-- get out of insert mode
 map("i", "<M-j>", "<esc>", { noremap = true, silent = false })
+
 map("n", "<C-w>.", "<C-w>10>", { noremap = true, silent = false })
+
+-- move between different panes
 map("n", "<c-l>", "<c-w>l", { noremap = true, silent = false })
 map("n", "<c-h>", "<c-w>h", { noremap = true, silent = false })
 map("n", "<c-j>", "<c-w>j", { noremap = true, silent = false })
@@ -12,9 +15,11 @@ map("n", "<c-k>", "<c-w>k", { noremap = true, silent = false })
 
 map("v", "<c-c>", '"+y', { noremap = true, silent = false })
 
+-- quickfix list move up and down
 map("n", "<a-l>", "<cmd>cnext<CR>", { noremap = true, silent = false })
 map("n", "<a-h>", "<cmd>cprev<CR>", { noremap = true, silent = false })
 
+-- in terminal mode get out of insert mode
 map("t", "<Esc><Esc>", "<c-\\><c-n>", { noremap = true, silent = false })
 
 
@@ -130,6 +135,16 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+
+
+			-- --------------------------------------------
+			-- EXPERIMENT
+
+      -- vim.keymap.set('n', '<C-q>', function ()
+      -- 	builtin.diagnostics({buffer=0})
+      -- end , { desc = '[S]earch [D]iagnostics' })
+			--
+			-- --------------------------------------------
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
@@ -573,6 +588,29 @@ require('lazy').setup({
     -- use opts = {} for passing setup options
     -- this is equivalent to setup({}) function
 },
+
+{ -- You can easily change to a different colorscheme.
+    -- Change the name of the colorscheme plugin below, and then
+    -- change the command in the config to whatever the name of that colorscheme is.
+    --
+    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+    'folke/tokyonight.nvim',
+    priority = 1000, -- Make sure to load this before all the other start plugins.
+    config = function()
+      ---@diagnostic disable-next-line: missing-fields
+      require('tokyonight').setup {
+        styles = {
+          comments = { italic = false }, -- Disable italics in comments
+        },
+      }
+
+      -- Load the colorscheme here.
+      -- Like many other themes, this one has different styles, and you could load
+      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+      vim.cmd.colorscheme 'tokyonight-night'
+    end,
+  },
+
 
 })
 
