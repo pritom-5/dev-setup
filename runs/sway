@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# this is the essentials of swaY
+sudo apt install -y sway swaybar swaylock rofi light blueman wlsunset pavucontrol nm-connection-editor
