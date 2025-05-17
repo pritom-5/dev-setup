@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-sudo flatpak install flathub -y com.google.Chrome app.zen_browser.zen
+# add drop box here
+sudo flatpak install flathub -y com.google.Chrome app.zen_browser.zen com.dropbox.Client

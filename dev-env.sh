@@ -62,8 +62,9 @@ copy() {
 
 
 copy $DEV_ENV/env/.config/alacritty $HOME/.config/alacritty/
-copy $DEV_ENV/env/.config/i3 $HOME/.config/i3
-copy $DEV_ENV/env/.config/i3status $HOME/.config/i3status
+copy $DEV_ENV/env/.config/sway/ $HOME/.config/sway
+copy $DEV_ENV/env/.config/waybar $HOME/.config/waybar
 copy $DEV_ENV/env/.config/nvim $HOME/.config/nvim
-copy $DEV_ENV/env/.config/.tmux.conf $HOME/.tmux.conf
+copy $DEV_ENV/fonts/ $HOME/.local/share/fonts/
+# copy $DEV_ENV/env/.config/.tmux.conf $HOME/.tmux.conf
 

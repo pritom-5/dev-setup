@@ -1,53 +1,32 @@
-# -*- mode: ini -*-
-
-bar {
-    status_command = waybar -c ~/.config/swaybar/config -s ~/.config/swaybar/style.css
-    position top
-    tray_padding 2
-}
-
-# ~/.config/swaybar/config
 {
     "modules-left": [
-        "sway/workspaces",
-        "wlan",
-        "eth"
+        "sway/workspaces"
     ],
     "modules-center": [],
     "modules-right": [
+				"network",
         "bluetooth",
         "backlight",
         "pulseaudio",
+				"battery",
         "clock",
         "tray"
     ],
-    "wlan": {
-        "type": "network",
-        "interface-type": "wireless",
-        "interval": 5,
-        "format-connected": "{essid} ",
-        "format-disconnected": "Disconnected ",
+		"layer": "top",
+		"position": "bottom",
+		"height": 10,
+    "network": {
+				"format-wifi": "wifi: ({icon} {signalStrength}%)",
+				"format-ethernet": "{ipaddr}/{cidr} {icon}", 
+				"tooltip-format-wifi": "{essid} ({signalStrength}%) - {ifname} via {gwaddr}",
+				"tooltip-format-ethernet": "{ipaddr}/{cidr} via {gwaddr}",
+				"tooltip-format-disconnected": "⚠", 
+				"format-disconnected": "⚠" ,
         "on-click": "exec nm-connection-editor"
     },
-    "eth": {
-        "type": "network",
-        "interface-type": "wired",
-        "interval": 5,
-        "format-connected": "{ifname} ",
-        "format-disconnected": "Disconnected "
-    },
     "bluetooth": {
-        "type": "bluetooth",
-        "interval": 5,
-        "format-connected": "{name} ",
-        "format-disconnected": "Disconnected ",
-        "on-click": "exec blueman-manager"
-    },
-    "backlight": {
-        "type": "backlight",
-        "card": "intel_backlight", # Find yours using `ls /sys/class/backlight/`
-        "format": "{percentage}% {icon}",
-        "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑"]
+			"format": " {status}",
+			"on-click": "exec blueman-manager"
     },
     "pulseaudio": {
         "type": "pulseaudio",
@@ -56,11 +35,22 @@ bar {
         "format-icons": ["󰕿", "󰖀", "󰕾"],
         "on-click": "exec pavucontrol"
     },
+		"battery": {
+			"bat": "BAT0",
+			"interval": 60,
+			"states": {
+				"warning": 30,
+				"critical": 15
+			},
+			"format": "{capacity}% {icon}",
+			"format-icons": ["", "", "", "", ""],
+			"max-length": 25
+		},
     "clock": {
         "type": "clock",
-        "format": "%Y-%m-%d %H:%M %a",
-        "tooltip-format": "<big>{:%Y-%m-%d %H:%M:%S}</big>\n{calendar}",
-        "on-click": "exec kitty --class CalendarDialog calcurse" # Optional: Requires calcurse and kitty
+				"interval": 60,
+				"format": "{:%B %d, %Y : %H:%M}",
+        "tooltip-format": "<big>{:%Y-%m-%d %H:%M:%S}</big>\n{calendar}"
     },
     "tray": {
         "type": "tray",
@@ -77,3 +67,5 @@ bar {
         }
     }
 }
+
+
