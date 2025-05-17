@@ -4,7 +4,7 @@
 - [ ] browsers
 - [ ] terminal
 - [ ] nvim
-- [ ] vscode
+- [ ] vscode (non flatpak version)
 - [ ] dropbox + obsidian
 - [ ] github + ssh
     - setup upstream with git repo
