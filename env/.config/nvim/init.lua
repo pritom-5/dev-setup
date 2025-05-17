@@ -77,7 +77,7 @@ require("lazy").setup({
 			-- { 'nvim-telescope/telescope-ui-select.nvim' },
 
 			-- Useful for getting pretty icons, but requires a Nerd Font.
-			-- { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
 		},
 		config = function()
 			-- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -436,6 +436,7 @@ require("lazy").setup({
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code
+				"goimports",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -665,6 +666,7 @@ require("lazy").setup({
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
+				go = { "goimports", "gofmt" },
 				-- Conform can also run multiple formatters sequentially
 				-- python = { "isort", "black" },
 				--
