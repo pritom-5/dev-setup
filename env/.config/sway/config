@@ -33,6 +33,9 @@ default_border none
 # adding warm light 
 exec wlsunset -t 3000 -T 3001
 
+# adding copyq on startup
+exec copyq
+
 # adding waybar top bar
 exec waybar
 
