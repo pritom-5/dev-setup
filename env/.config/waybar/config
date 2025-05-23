@@ -16,8 +16,8 @@
 		"position": "bottom",
 		"height": 10,
     "network": {
-				"format-wifi": "wifi: ({icon} {signalStrength}%)",
-				"format-ethernet": "{ipaddr}/{cidr} {icon}", 
+				"format-wifi": " {signalStrength}%",
+				"format-ethernet": " {ipaddr}/{cidr}", 
 				"tooltip-format-wifi": "{essid} ({signalStrength}%) - {ifname} via {gwaddr}",
 				"tooltip-format-ethernet": "{ipaddr}/{cidr} via {gwaddr}",
 				"tooltip-format-disconnected": "⚠", 
