@@ -3,6 +3,7 @@
 - [ ] swaylock
 - [ ] browsers
 - [ ] terminal
+- [ ] languages
 - [ ] nvim
 - [ ] vscode (non flatpak version)
 - [ ] dropbox + obsidian
