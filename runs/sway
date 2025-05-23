@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 # this is the essentials of swaY
-sudo dnf install -y sway waybar swaylock wofi light blueman wlsunset pavucontrol nm-connection-editor
+sudo dnf install -y sway waybar grimshot swaylock wofi light blueman wlsunset pavucontrol nm-connection-editor
