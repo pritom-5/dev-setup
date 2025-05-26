@@ -64,6 +64,7 @@ copy() {
 # copy $DEV_ENV/env/.config/alacritty $HOME/.config/alacritty
 copy $DEV_ENV/env/.config/sway $HOME/.config/sway
 # copy $DEV_ENV/env/.config/waybar $HOME/.config/waybar
+copy $DEV_ENV/env/.config/swaylock $HOME/.config/swaylock
 # copy $DEV_ENV/env/.config/nvim $HOME/.config/nvim
 # copy $DEV_ENV/fonts $HOME/.local/share/fonts
 

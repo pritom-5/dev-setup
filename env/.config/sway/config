@@ -24,7 +24,7 @@ set $menu wofi
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/f42/default/f42-01-night.jxl fill
+output * bg /usr/share/backgrounds/sway/wp9585556-windows-11-dark-wallpapers.jpg fill
 
 # removes the top bar
 for_window [class="^.*"] border pixel 4
@@ -51,8 +51,8 @@ exec waybar
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         timeout 1800 'swaylock -f -c 000000' \
+         timeout 3600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
 
 
@@ -61,7 +61,7 @@ exec swayidle -w \
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 # lock device on $mod+esc
-bindsym $mod+Escape exec swaylock -f -i /usr/share/backgrounds/f42/default/f42-01-night.jxl 
+bindsym $mod+Escape exec swaylock -f -i /usr/share/backgrounds/sway/wp9585556-windows-11-dark-wallpapers.jpg
 
 ### Input configuration
 #
@@ -232,7 +232,7 @@ bindsym $mod+r mode "resize"
 # lock screen on mod+esc
 
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    # bindsym Print exec grim
 
 
 include /etc/sway/config.d/*
