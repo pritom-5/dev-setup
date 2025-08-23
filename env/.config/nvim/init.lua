@@ -2,8 +2,10 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 local map = vim.api.nvim_set_keymap
 local set = vim.keymap.set
+vim.o.colorcolumn = "100"
 
-set("i", "<M-j>", "<esc>", { desc = "get out of insert-mode" })
+-- set("i", "<M-j>", "<esc>", { desc = "get out of insert-mode" })
+set("i", "jk", "<esc>", { desc = "get out of insert-mode" })
 
 set("n", "<C-w>.", "<C-w>10>")
 
@@ -16,11 +18,11 @@ set("n", "<C-k>", "<C-w>k", { desc = "move to up window" })
 set("v", "<C-c>", '"+y', { desc = "copy to clipboard" })
 
 -- quickfix list move up and down
-set("n", "<M-l>", "<cmd>cnext<CR>", { desc = "move to next quickfixlist" })
-set("n", "<M-h>", "<cmd>cprev<CR>", { desc = "move to prev quickfixlist" })
+set("n", "<leader>j", "<cmd>cnext<CR>", { desc = "move to next quickfixlist" })
+set("n", "<leader>k", "<cmd>cprev<CR>", { desc = "move to prev quickfixlist" })
 
 -- in terminal mode get out of insert mode
-set("t", "<M-j>", "<C-\\><C-n>", { desc = "copy to clipboard" })
+set("t", "jk", "<C-\\><C-n>", { desc = "copy to clipboard" })
 
 -- Diagnostic keymaps
 set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
@@ -689,3 +691,26 @@ vim.keymap.set("n", "term", function()
 	vim.wo.winfixheight = true
 	vim.cmd.term()
 end)
+
+-- custom function to create custom layout
+--
+local function createComplexLayout()
+	vim.cmd.NvimTreeClose()
+	vim.cmd.vsplit()
+	vim.cmd.wincmd("h")
+	vim.cmd.split()
+	vim.cmd.tabnew()
+	vim.cmd.vsplit()
+	vim.cmd.wincmd("h")
+	vim.cmd.term()
+	vim.cmd.wincmd("l")
+	vim.cmd.term()
+	vim.cmd.tabfirst()
+end
+
+vim.keymap.set(
+	"n",
+	"<leader>lay",
+	createComplexLayout,
+	{ desc = "Creating Custom Layout", noremap = true, silent = true }
+)
