@@ -26,17 +26,19 @@ foreground = "#d4d4d4"
 size = 12.0
 
 [font.bold]
-family = "JetBrainsMono Nerd Font Mono"
+# family = "JetBrainsMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Propo"
 style = "Bold"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Propo"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Propo"
 style = "Regular"
 
 [window]
 decorations = "none"
+
 
