@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+
+# something for bluetooth
+sudo apt install -y i3 rofi blueman light xsct
+
+
+

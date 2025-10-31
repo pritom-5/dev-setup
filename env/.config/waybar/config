@@ -1,0 +1,71 @@
+{
+    "modules-left": [
+        "sway/workspaces"
+    ],
+    "modules-center": [],
+    "modules-right": [
+				"network",
+        "bluetooth",
+        "backlight",
+        "pulseaudio",
+				"battery",
+        "clock",
+        "tray"
+    ],
+		"layer": "top",
+		"position": "bottom",
+		"height": 10,
+    "network": {
+				"format-wifi": " {signalStrength}%",
+				"format-ethernet": " {ipaddr}/{cidr}", 
+				"tooltip-format-wifi": "{essid} ({signalStrength}%) - {ifname} via {gwaddr}",
+				"tooltip-format-ethernet": "{ipaddr}/{cidr} via {gwaddr}",
+				"tooltip-format-disconnected": "⚠", 
+				"format-disconnected": "⚠" ,
+        "on-click": "exec nm-connection-editor"
+    },
+    "bluetooth": {
+			"format": " {status}",
+			"on-click": "exec blueman-manager"
+    },
+    "pulseaudio": {
+        "type": "pulseaudio",
+        "format-volume": "{percentage}% {icon}",
+        "format-muted": "Muted 󰖍",
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "on-click": "exec pavucontrol"
+    },
+		"battery": {
+			"bat": "BAT0",
+			"interval": 60,
+			"states": {
+				"warning": 30,
+				"critical": 15
+			},
+			"format": "{capacity}% {icon}",
+			"format-icons": ["", "", "", "", ""],
+			"max-length": 25
+		},
+    "clock": {
+        "type": "clock",
+				"interval": 60,
+				"format": "{:%B %d, %Y : %H:%M}",
+        "tooltip-format": "<big>{:%Y-%m-%d %H:%M:%S}</big>\n{calendar}"
+    },
+    "tray": {
+        "type": "tray",
+        "spacing": 2
+    },
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format": "{name}: {icon}",
+        "format-icons": {
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    }
+}
+
+

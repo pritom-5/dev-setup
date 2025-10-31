@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# this is the essentials of swaY
+sudo apt install -y sway waybar grimshot swaylock wofi light blueman wlsunset pavucontrol  grimshot lxappearance
