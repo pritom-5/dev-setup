@@ -3,7 +3,7 @@ vim.g.maplocalleader = " "
 local map = vim.api.nvim_set_keymap
 local set = vim.keymap.set
 
-set("i", "<M-j>", "<esc>", { desc = "get out of insert-mode" })
+set("i", "jk", "<esc>", { desc = "get out of insert-mode" })
 
 set("n", "<C-w>.", "<C-w>10>")
 
@@ -20,7 +20,7 @@ set("n", "<M-l>", "<cmd>cnext<CR>", { desc = "move to next quickfixlist" })
 set("n", "<M-h>", "<cmd>cprev<CR>", { desc = "move to prev quickfixlist" })
 
 -- in terminal mode get out of insert mode
-set("t", "<M-j>", "<C-\\><C-n>", { desc = "copy to clipboard" })
+set("t", "jk", "<C-\\><C-n>", { desc = "copy to clipboard" })
 
 -- Diagnostic keymaps
 set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })

@@ -1,12 +1,12 @@
-- [x] sway
-- [x] waybar
-- [x] swaylock
+- [ ] i3
 - [ ] browsers
     - [x] chrome stable 
     - [ ] zen
-    - [ ] firefox
+    - [x] firefox
 - [x] terminal
 - [ ] languages
+    - golang
+    - nvm + npm + js
 - [x] nvim
 - [ ] vscode (non flatpak version)
 - [ ] dropbox + obsidian
