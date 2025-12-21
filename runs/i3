@@ -2,7 +2,7 @@
 
 
 # something for bluetooth
-sudo apt install -y i3 light redshift
+sudo apt install -y i3 light redshift pavucontrol flameshot
 
 
 
